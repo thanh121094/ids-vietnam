@@ -1,0 +1,50 @@
+.c-arctic {
+  float: left;
+  width: 100%;
+  .c-arctic-grid {
+    float: left;
+    width: 100%;
+    padding: 80px 0;
+    .c-arctic-grid-item {
+      padding: 0 15px;
+      .title {
+        margin-top: 16px;
+        font-weight: 500;
+        font-family: 'Agenda',sans-serif;
+      }
+      .detail {
+        line-height: 25.6px;
+        font-size: 12px;
+        padding: 20px 0;
+      }
+    }
+  }
+  .c-module--split {
+    float: left;
+    width: 100%;
+  }
+  .c-arctic-content {
+    float: left;
+    width: 100%;
+    padding: 80px 0;
+    .c-arctic-content-theme {
+      width: 750px;
+      margin: 0 auto;
+      .detail {
+        p {
+          line-height: 40px;
+          margin-bottom: 23px;
+          padding-top: 9px;
+          text-align: center;
+        }
+      }
+      figure {
+        width: 100%;
+        text-align: center;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}

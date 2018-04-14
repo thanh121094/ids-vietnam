@@ -1,0 +1,237 @@
+html {
+    -ms-overflow-style: scrollbar; //Fix scrollbar transparent at ie10, ie11
+    -webkit-font-smoothing: antialiased; //Adding font smoothing for safari MAC OS
+}
+
+body {
+    font-size: 16px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: $color-white;
+    left: 0;
+    @include transition(left 0.3s ease);
+}
+
+@for $i from 0 to 12 {
+    $n: 12 - $i;
+
+    .col-xs-#{$n},
+    .col-sm-#{$n},
+    .col-md-#{$n},
+    .col-lg-#{$n} {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+a {
+    color: #e05f2e;
+    text-decoration: none;
+    transition: color .1s,background-color .1s;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0;
+}
+
+ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clear-fix {
+    clear: both;
+}
+
+input {
+    outline: none;
+}
+
+.display-block {
+    display: block !important;
+}
+
+.display-none {
+    display:none !important;
+}
+
+.body-active {
+    position: relative;
+    left: -40%;
+    overflow: hidden;
+}
+
+.overflow-hidden {
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-title {
+    h3 {
+        font-size: 24px;
+        color: $color-title;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-bottom: 3px solid $color-header-menu-active;
+        float: left;
+        padding-bottom: 23px;
+    }
+    a {
+        text-transform: uppercase;
+        color: $color-header-menu-active;
+        font-size: 14px;
+        font-weight: bold;
+        padding-top: 15px;
+        float: right;
+    }
+}
+
+.menu-title {
+    border-bottom: 1px solid $color-border-title;
+    padding-bottom: 50px;
+}
+
+.watch {
+    background: url("../../media/images/ic-date.png") no-repeat 0 center;
+    width: 100%;
+    float: left;
+    padding: 10px 0 10px 20px;
+    font-size: 14px;
+}
+.address {
+    background: url("../../media/images/ic-place.png") no-repeat;
+    width: 100%;
+    float: left;
+    padding: 0 0 20px 20px;
+    font-size: 14px;
+    height: 60px;
+    overflow: hidden;
+    @include breakpoint(lores) {
+        margin-bottom: 15px;
+    }
+}
+.vinexad-body {
+    @include breakpoint(desktop) {
+        margin-top: 115px;
+    }
+    @include breakpoint(largedesktop) {
+        margin-top: 125px;
+    }
+    @include breakpoint(wrap) {
+        margin-top: 130px;
+    }
+    @include breakpoint(lores) {
+        margin-top: 90px;
+    }
+}
+
+.exhibition-list-content {
+    padding-left: 30px;
+    img {
+        width: 190px;
+    }
+    h2 {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    button {
+        border: none;
+        background: $color-header-menu-active;
+        color: $color-white;
+        @include border-radius(5px);
+        padding: 10px 20px;
+    }
+}
+
+.padding-right-15 {
+    padding-right: 15px;
+    @include breakpoint(lores) {
+        padding-right: 0;
+    }
+}
+.padding-left-15 {
+    padding-left: 15px;
+    @include breakpoint(lores) {
+        padding-left: 0;
+    }
+}
+
+.pagination {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    ul {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        zoom: 1;
+        li {
+            float: left;
+            a {
+                padding: 5px 12px;
+                margin: 0 5px;
+                color: $color-black;
+                border: 1px solid $color-border-title;
+                @include border-radius(50%);
+                &:hover {
+                    background: $color-header-menu-active;
+                    border:1px solid $color-header-menu-active;
+                    color: $color-white;
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                }
+            }
+            .active {
+                background: $color-header-menu-active;
+                border: 1px solid $color-header-menu-active;
+                color: $color-white;
+                &:hover {
+                    border: none;
+                }
+            }
+            .prev {
+
+            }
+        }
+    }
+}
+.clearfix:before, .clearfix:after, .dl-horizontal dd:before, .dl-horizontal dd:after, .container:before, .container:after, .container-fluid:before, .container-fluid:after, .row:before, .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after, .btn-toolbar:before, .btn-toolbar:after, .btn-group-vertical > .btn-group:before, .btn-group-vertical > .btn-group:after, .nav:before, .nav:after, .navbar:before, .navbar:after, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after, .panel-body:before, .panel-body:after, .modal-header:before, .modal-header:after, .modal-footer:before, .modal-footer:after {
+    display: none;
+}
+.c-form__form .gfield_label, .gform_body .gfield_label, .label {
+    font-size: 14px;
+    color: #727272;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.show {
+    display: block !important;
+}
