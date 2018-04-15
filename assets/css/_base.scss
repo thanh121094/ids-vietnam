@@ -235,3 +235,15 @@ input {
 .show {
     display: block !important;
 }
+.screen {
+    display: block;
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+.mobile-screen {
+    display: none;
+    @include breakpoint(mobile) {
+        display: block;
+    }
+}

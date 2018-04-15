@@ -20,6 +20,13 @@
             padding-top: 8.2px;
             color: #5e4651;
             font-family: Agenda,sans-serif;
+            font-weight: bolder;
+            @include breakpoint(tablet) {
+              font-size: 36px;
+            }
+            @include breakpoint(mobile) {
+              font-size: 36px;
+            }
           }
           .lead {
             font-size: 19px;
@@ -102,11 +109,17 @@
           h2 {
             color: #5e4651;
             font-family: Agenda,sans-serif;
+            font-weight: bolder;
             font-style: normal;
-            font-weight: 400;
             font-size: 44px;
             margin-bottom: 6.5px;
             padding-top: 9.5px;
+            @include breakpoint(tablet) {
+              font-size: 32px;
+            }
+            @include breakpoint(mobile) {
+              font-size: 32px;
+            }
           }
           .lead {
             font-size: 19px;
@@ -117,6 +130,9 @@
         .c-category-posts {
           .c-category-post {
             height: 280px;
+            @include breakpoint(mobile) {
+              margin-bottom: 15px;
+            }
             a {
               display: block;
               width: 100%;
@@ -246,6 +262,9 @@
         border-radius: 4px;
         box-shadow: 2px 4px 32px rgba(0,0,0,.05);
         margin-top: -96px;
+        @include breakpoint(mobile) {
+          margin-top: 0;
+        }
         .terms {
           font-size: 13px;
           text-transform: uppercase;

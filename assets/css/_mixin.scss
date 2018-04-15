@@ -7,7 +7,7 @@
     }
     @else if $point==desktop {
         html.ie8 & { @content; }
-        @media (min-width: $width-desktop) {
+        @media (min-width: ($width-desktop)) and (max-width: ($width-large-desktop - 1)) {
             @content;
         }
     }
@@ -103,9 +103,9 @@
 }
 
 @mixin border-radius($params) {
-    -webkit-border-radius: #{$params}; 
-    -moz-border-radius: #{$params}; 
-    border-radius: #{$params}; 
+    -webkit-border-radius: #{$params};
+    -moz-border-radius: #{$params};
+    border-radius: #{$params};
 }
 
 @mixin backface($params) {

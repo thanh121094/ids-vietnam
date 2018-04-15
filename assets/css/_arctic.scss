@@ -30,6 +30,9 @@
     .c-arctic-content-theme {
       width: 750px;
       margin: 0 auto;
+      @include breakpoint(mobile) {
+        width: 100%;
+      }
       .detail {
         p {
           line-height: 40px;

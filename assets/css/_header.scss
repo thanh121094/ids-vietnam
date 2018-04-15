@@ -3,6 +3,15 @@
   height: 100px;
   float: left;
   background: #fff;
+  @include breakpoint(desktop) {
+    height: auto;
+  }
+  @include breakpoint(tablet) {
+    height: auto;
+  }
+  @include breakpoint(mobile) {
+    height: auto;
+  }
   .main-header__container {
     height: 100px;
     display: -webkit-box;
@@ -26,15 +35,49 @@
     background-color: #fff;
     z-index: 11;
     width: 100%;
+    @include breakpoint(desktop) {
+      height: auto;
+    }
+    @include breakpoint(tablet) {
+      height: auto;
+    }
+    @include breakpoint(mobile) {
+      height: auto;
+    }
     .main-header__logo {
       width: 72px;
       margin: 0;
+      .main-header__logo__link {
+        img {
+          @include breakpoint(desktop) {
+            width: 42px;
+            margin: 10px 0;
+          }
+          @include breakpoint(tablet) {
+            width: 42px;
+            margin: 10px 0;
+          }
+          @include breakpoint(mobile) {
+            width: 42px;
+            margin: 10px 0;
+          }
+        }
+      }
     }
   }
   .container {
     padding-left: 40px;
     padding-right: 40px;
     max-width: 1220px;
+    @include breakpoint(desktop) {
+      padding: 0 20px;
+    }
+    @include breakpoint(tablet) {
+      padding: 0 20px;
+    }
+    @include breakpoint(mobile) {
+      padding: 0 20px;
+    }
   }
   .main-header__nav {
     text-align: right;
@@ -46,6 +89,15 @@
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    @include breakpoint(desktop) {
+      display: none;
+    }
+    @include breakpoint(tablet) {
+      display: none;
+    }
+    @include breakpoint(mobile) {
+      display: none;
+    }
     ul {
       list-style: none;
       padding: 0;
@@ -57,7 +109,7 @@
         a {
           font-size: 14px;
           color: #333;
-          font-weight: 500;
+          font-weight: bolder;
           transition: color .1s,background-color .1s;
           &:hover {
             color: #e05f2e;
@@ -66,6 +118,13 @@
             background: 0 0;
             padding-bottom: 4px;
           }
+        }
+        .active {
+          color: #e05f2e;
+          border-bottom: 2px solid #e05f2e;
+          text-decoration: none;
+          background: 0 0;
+          padding-bottom: 4px;
         }
       }
     }
@@ -85,7 +144,7 @@
         border: 1px solid #e05f2e;
         padding: 12px 25px;
         line-height: 1;
-        font-weight: bold;
+        font-weight: bolder;
         &:hover {
           border-bottom-width: 1px;
           color: #fff;
@@ -101,7 +160,7 @@
       }
       .dropdown-toggle {
         margin-left: 16px;
-        padding: 12px 30px 12px 24px;
+        padding: 13.6px 30px 12px 24px;
         border: 1px solid #dfe3e9;
         border-radius: 50px;
         line-height: 1;
@@ -111,6 +170,8 @@
         background-repeat: no-repeat;
         background-size: 10px 16px;
         background-position: 88% 50%;
+        font-size: 14px;
+        font-weight: 600;
       }
       .dropdown-menu {
         position: absolute;
