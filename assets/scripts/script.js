@@ -1,27 +1,4 @@
 (function ($, window, document, undefined) {
-  var myLazyLoader = {
-    options: {
-      bind: 'event',
-      threshold: 300,
-      effect: 'fadeIn',
-      beforeLoad: function (element) {
-        element.removeClass('lazyload').addClass('lazyload-loading');
-      },
-      afterLoad: function (element) {
-        element.removeClass('lazyload-loading');
-      },
-      onError: function (element) {
-        element.removeClass('lazyload-loading');
-        console.log('image loading error: ' + element.attr('data-src'));
-      }
-    },
-    load: function (item) {
-      if (typeof item.lazy != 'undefined') {
-        item.lazy(myLazyLoader.options);
-      }
-    }
-  };
-
   var responsiveHandler = {
     init: function () {
       responsiveHandler.markView();
@@ -72,41 +49,11 @@
 
   var headerHandler = {
     init: function () {
-      headerHandler.submenuHandler();
-      var nav = $('.nav');
-      // JS for hamburger button
-      $('.nav-icon3').click(function () {
-        $(this).toggleClass('open');
-        $('body').toggleClass('overflow-hidden');
-        nav.animate({
-          width: "toggle"
-        });
-        $('nav').toggleClass('nav-active');
-        $('.animated-arrow').toggleClass('animated-arrow-active');
-      });
-      // End Js for humberger
-      $('.overlapblackbg').click(function () {
-        $('.nav-icon3').click();
+      $('.mobile-menu-trigger').click(function () {
+        $(this).closest('.main-header__container').find('.fa-angle-down').toggleClass('display-none');
+        $(this).closest('.main-header__container').find('.fa-angle-up').toggleClass('display-none');
+        $('.mobile-menu').toggleClass('mobile-menu-active');
       })
-    },
-    submenuHandler: function () {
-      var flag = 0;
-      $('.menu-click').click(function () {
-        $('ul.wsmenu-submenu').not($(this).siblings()).slideUp();
-        $(this).siblings('ul.wsmenu-submenu').slideToggle();
-        if (flag === 0) {
-          $(this).addClass('wssubmenu-active');
-          flag = 1;
-        } else if (flag === 1) {
-          if ($(this).closest('li').find('.wssubmenu-active').is(":visible")) {
-            $(this).removeClass('wssubmenu-active');
-            flag = 0;
-          } else {
-            $('.wssubmenu-active').removeClass('wssubmenu-active');
-            $(this).addClass('wssubmenu-active');
-          }
-        }
-      });
     }
   };
 
@@ -196,142 +143,21 @@
     }
   };
 
-  var tabsIntroduce = {
+  var serviceTab = {
     init: function () {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      $('.tablinks span').click(function () {
-        $(this).closest('.vinexad-detail-nav').find('.active').removeClass('active');
-        $(this).addClass('active');
-        var thisId = $(this).closest('.tablinks').attr('data-id');
-        $('.tabcontent').css('display', 'none');
-        $('.' + thisId).css('display', 'block');
-      });
-      $('.defaultOpen').css('display', 'block');
-    }
-  };
-
-  var introduceSliderHandler = {
-    init: function () {
-      var swiper = new Swiper('.introduce-container', {
-        pagination: '.swiper-pagination',
-        paginationClickable: false,
-        preventClicks: false,
-        slidesPerView: 4,
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        spaceBetween: 30,
-        breakpoints: {
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 20
-          },
-          640: {
-            slidesPerView: 1,
-            spaceBetween: 20
-          },
-          450: {
-            slidesPerView: 1,
-            spaceBetween: 10
-          }
-        }
-      });
-    }
-  };
-  var supportSliderHandler = {
-    init: function () {
-      var swiper = new Swiper('.support-container', {
-        pagination: '.swiper-pagination',
-        paginationClickable: false,
-        preventClicks: false,
-        slidesPerView: 3,
-        spaceBetween: 30,
-        speed: 2500,
-        loop: true,
-        autoplay: {
-          delay: 400,
-          disableOnInteraction: false
-        },
-        breakpoints: {
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 20
-          },
-          640: {
-            slidesPerView: 1,
-            spaceBetween: 20
-          },
-          450: {
-            slidesPerView: 1,
-            spaceBetween: 10
-          }
-        }
+      $('.c-tabs__next-trigger').click(function(){
+        $(this).closest('article').find('.nav-tabs li.active + li').tabs('click');
       });
     }
   };
 
-  var foreignSliderHandler = {
-    init: function () {
-      var swiper = new Swiper('.foreign-container', {
-        pagination: '.swiper-pagination',
-        paginationClickable: false,
-        preventClicks: false,
-        slidesPerView: 3,
-        spaceBetween: 30,
-        speed: 2500,
-        loop: true,
-        autoplay: {
-          delay: 400,
-          disableOnInteraction: false
-        },
-        breakpoints: {
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 20
-          },
-          640: {
-            slidesPerView: 1,
-            spaceBetween: 0
-          },
-          450: {
-            slidesPerView: 1,
-            spaceBetween: 0
-          }
-        }
-      });
-    }
-  };
-
-  var mapHandler = {
-    init: function () {
-      if ($('#map').length > 0) {
-        var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    }
-  };
   // please modulize your functions so we can reuse/turn on & off easily
   $(document).ready(function () {
-    myLazyLoader.load($('.lazyload'));
     responsiveHandler.init();
     headerHandler.init();
     validateContact.init();
-    tabsIntroduce.init();
-    introduceSliderHandler.init();
-    supportSliderHandler.init();
-    foreignSliderHandler.init();
-    mapHandler.init();
     languageSelectHandler.init();
+    serviceTab.init();
   });
 
 })(jQuery, window, document);
