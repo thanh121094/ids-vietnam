@@ -145,9 +145,34 @@
 
   var serviceTab = {
     init: function () {
-      $('.c-tabs__next-trigger').click(function(){
-        $(this).closest('article').find('.nav-tabs li.active + li').tabs('click');
+      $('.next-tab1').click(function () {
+        $('.nav-tabs li a').removeClass('active');
+        $('.tab1').addClass('active');
       });
+      $('.next-tab2').click(function () {
+        $('.nav-tabs li a').removeClass('active');
+        $('.tab2').addClass('active');
+      });
+      $('.next-tab3').click(function () {
+        $('.nav-tabs li a').removeClass('active');
+        $('.tab3').addClass('active');
+      });
+      $('.next-tab4').click(function () {
+        $('.nav-tabs li a').removeClass('active');
+        $('.tab4').addClass('active');
+      });
+      $('.next-tab5').click(function () {
+        $('.nav-tabs li a').removeClass('active');
+        $('.tab5').addClass('active');
+      });
+      $('.next-tab6').click(function () {
+        $('.nav-tabs li a').removeClass('active');
+        $('.tab6').addClass('active');
+      });
+      $('.next-tab7').click(function () {
+        $('.nav-tabs li a').removeClass('active');
+        $('.tab7').addClass('active');
+      })
     }
   };
 

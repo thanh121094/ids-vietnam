@@ -121,6 +121,24 @@
       display: flex;
       justify-content: center;
       border: none;
+      @include breakpoint(desktop) {
+        justify-content: normal;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-top: 10px;
+      }
+      @include breakpoint(tablet) {
+        justify-content: normal;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-top: 10px;
+      }
+      @include breakpoint(mobile) {
+        justify-content: normal;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-top: 10px;
+      }
       li{
         display: inline;
         text-align: center;
@@ -171,10 +189,10 @@
             }
           }
         }
-      }
-      .active {
-        figure {
-          background-color: #5e4651;
+        .active {
+          figure {
+            background-color: #5e4651;
+          }
         }
       }
     }

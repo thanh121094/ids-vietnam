@@ -43,6 +43,7 @@ footer {
                     border-radius: 50px;
                     margin-left: 15px;
                     font-size: 14px;
+                    outline:none;
                     @include breakpoint(tablet) {
                         margin-left: 10px;
                         font-size: 12px;

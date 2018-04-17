@@ -268,6 +268,7 @@ main {
                 line-height: 1;
                 transition: .3s;
                 margin-bottom: 20px;
+                font-size: 13px;
                 &:focus {
                   border-color: #9a9ea5;
                   outline: none;
@@ -376,6 +377,7 @@ main {
                 border-radius: 40px;
                 font-size: 14px;
                 border: none;
+                outline: none;
                 &:hover {
                   color: #fff;
                   background-color: #a94119;
