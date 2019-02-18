@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatSidenavModule, MatInputModule, MatPaginatorModule, MatProgressSpinnerModule,
@@ -12,6 +12,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { AppComponent } from './app.component';
 import { FinancesComponent } from './finances/finances.component';
 import { FiltersComponent } from './filters/filters.component';
+import { DataService } from './data.service';
 
 @NgModule({
   declarations: [
@@ -34,10 +35,12 @@ import { FiltersComponent } from './filters/filters.component';
     MatCardModule,
     MatDatepickerModule,
     MatSelectModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    ReactiveFormsModule
   ],
   providers: [
-    MatDatepickerModule
+    MatDatepickerModule,
+    DataService
   ],
   bootstrap: [AppComponent]
 })

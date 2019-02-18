@@ -3,11 +3,12 @@ import { Finance } from '../finance';
 import { FINANCES } from '../mock-finances';
 import { displayedColumns } from './common';
 import { MatPaginator, MatTableDataSource, MatSort} from '@angular/material';
+import { DataService } from "../data.service";
 
 @Component({
   selector: 'app-finances',
   templateUrl: './finances.component.html',
-  styleUrls: ['./finances.component.css']
+  styleUrls: ['./finances.component.css'],
 })
 
 export class FinancesComponent implements OnInit {
@@ -17,7 +18,9 @@ export class FinancesComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() {
+  message: object;
+
+  constructor(private data: DataService) {
     const finances: Finance[] = FINANCES;
     this.dataSource = new MatTableDataSource(finances);
   }
@@ -25,5 +28,6 @@ export class FinancesComponent implements OnInit {
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    this.data.currentMessage.subscribe(message => {this.message = message; console.log(11111, message);});
   }
 }

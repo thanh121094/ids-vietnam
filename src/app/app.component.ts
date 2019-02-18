@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Transaction search';
+
+  message:string;
+
+  receiveMessage($event) {
+  	console.log('xxxxx', $event);
+    this.message = $event;
+  }
+
 }

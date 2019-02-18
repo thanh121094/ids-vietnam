@@ -1,4 +1,6 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild, Output, EventEmitter} from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { DataService } from "../data.service";
 
 @Component({
   selector: 'app-filters',
@@ -8,16 +10,18 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 
 export class FiltersComponent implements OnInit {
 
-  constructor() {
+  message: object;
+  constructor(private data: DataService) {
   }
 
-  onSubmit() {
-    console.log('aaaaaaa');
-    // {email: '...', password: '...'}
-    // ... <-- now use JSON.stringify() to convert form values to json.
+  onSubmit(f: NgForm) {
+    console.log(f.value, this.message);
+    this.message = f.value;
+    this.data.changeMessage(this.message);
   }
 
   ngOnInit() {
+    this.data.currentMessage.subscribe(message => this.message = message)
   }
  
 }

@@ -6,6 +6,6 @@
 </header>
 <div class="onepay-testing container">
 	<app-filters class="app-filters"></app-filters>
-	<app-finances class="app-finances"></app-finances>
+	<app-finances class="app-finances" (messageEvent)="receiveMessage($event)"></app-finances>
 </div>
 
