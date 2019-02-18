@@ -1,0 +1,75 @@
+<mat-card>
+	<form (ngSubmit)="onSubmit(searchForm)" #searchForm="ngForm" class="filter-form">
+		<!-- Merchant ID -->
+		<mat-form-field class="filter-full-width">
+			<input matInput placeholder="Merchant ID" value="">
+		</mat-form-field>
+		<!-- From Date -->
+		<mat-form-field>
+			<input matInput [matDatepicker]="from-date" placeholder="From Date">
+			<mat-datepicker-toggle matSuffix [for]="from-date"></mat-datepicker-toggle>
+			<mat-datepicker #picker></mat-datepicker>
+		</mat-form-field>
+		<!-- To Date -->
+		<mat-form-field>
+			<input matInput [matDatepicker]="to-date" placeholder="To Date">
+			<mat-datepicker-toggle matSuffix [for]="to-date"></mat-datepicker-toggle>
+			<mat-datepicker #picker></mat-datepicker>
+		</mat-form-field>
+		<!-- Transaction ID -->
+		<mat-form-field class="filter-full-width">
+			<input matInput placeholder="Transaction ID" value="">
+		</mat-form-field>
+		<!-- Order Reference -->
+		<mat-form-field class="filter-full-width">
+			<input matInput placeholder="Order Reference" value="">
+		</mat-form-field>
+		<!-- Merchant trans Ref -->
+		<mat-form-field class="filter-full-width">
+			<input matInput placeholder="Merchant trans Ref" value="">
+		</mat-form-field>
+		<!-- Card Number -->
+		<mat-form-field class="filter-full-width">
+			<input matInput placeholder="Card Number" value="">
+		</mat-form-field>
+		<!-- Currency -->
+		<mat-form-field class="filter-full-width">
+			<mat-select placeholder="Currency" disableRipple>
+				<mat-option value="All">All</mat-option>
+				<mat-option value="USD">USD</mat-option>
+				<mat-option value="VND">VND</mat-option>
+			</mat-select>
+		</mat-form-field>
+		<!-- Card Type -->
+		<mat-form-field class="filter-full-width">
+			<mat-select placeholder="Card Type" disableRipple>
+				<mat-option value="All">All</mat-option>
+				<mat-option value="Visa">Visa</mat-option>
+				<mat-option value="Master">Master</mat-option>
+				<mat-option value="CUP">CUP</mat-option>
+				<mat-option value="JCB">JCB</mat-option>
+				<mat-option value="Amex">Amex</mat-option>
+			</mat-select>
+		</mat-form-field>
+		<!-- Transaction Type -->
+		<mat-form-field class="filter-full-width">
+			<mat-select placeholder="Transaction Type" disableRipple>
+				<mat-option value="All">All</mat-option>
+				<mat-option value="Purcharse">Purcharse</mat-option>
+				<mat-option value="Refund">Refund</mat-option>
+			</mat-select>
+		</mat-form-field>
+		<!-- Transaction State -->
+		<mat-form-field class="filter-full-width">
+			<mat-select placeholder="Transaction State" disableRipple>
+				<mat-option value="All">All</mat-option>
+				<mat-option value="Successfull">Successfull</mat-option>
+				<mat-option value="Failed">Failed</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<button mat-raised-button color="primary" class="search" type="submit">Search</button>
+
+		<button mat-raised-button color="primary" class="clear">Clear</button>
+	</form>
+</mat-card>

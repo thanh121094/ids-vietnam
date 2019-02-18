@@ -1,8 +1,8 @@
-<div class="example-header">
+<!-- <div class="example-header">
   <mat-form-field>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
   </mat-form-field>
-</div>
+</div> -->
 
 <div class="example-container mat-elevation-z8">
 
@@ -67,12 +67,6 @@
       <mat-header-cell *matHeaderCellDef mat-sort-header> Response Code </mat-header-cell>
       <mat-cell *matCellDef="let row"> {{row.response}} </mat-cell>
     </ng-container>
-
-    <!--&lt!&ndash Progress Column &ndash&gt-->
-    <!--<ng-container matColumnDef="response">-->
-      <!--<mat-header-cell *matHeaderCellDef mat-sort-header> Progress </mat-header-cell>-->
-      <!--<mat-cell *matCellDef="let row"> {{row.response}} </mat-cell>-->
-    <!--</ng-container>-->
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row columns: displayedColumns">

@@ -1,0 +1,31 @@
+header {
+	width: 100%;
+	height: auto;
+	float: left;
+}
+header h3 {
+	float: left;
+}
+header button {
+	float: right;
+	margin-top: 15px;
+}
+.container {
+	max-width: 1300px;
+	margin: 0 auto;
+}
+.onepay-testing {
+	width: 100%;
+	height: auto;
+}
+.app-filters {
+	width: 18%;
+	float: left;
+	margin-right: 1%;
+	height: 100%;
+}
+.app-finances {
+	width: 81%;
+	float: left;
+	height: 100%;
+}
