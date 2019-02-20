@@ -10,4 +10,5 @@ export const displayedColumns =
   'date',
   'trans_type',
   'response',
+  'trans_state'
 ];

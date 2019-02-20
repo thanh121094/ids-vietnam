@@ -6,13 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Transaction search';
 
-  message:string;
-
-  receiveMessage($event) {
-  	console.log('xxxxx', $event);
-    this.message = $event;
-  }
+  constructor() {}
 
 }

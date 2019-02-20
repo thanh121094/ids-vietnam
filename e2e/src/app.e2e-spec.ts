@@ -3,7 +3,7 @@
 import { browser, element, by, ElementFinder } from 'protractor';
 import { promise } from 'selenium-webdriver';
 
-const expectedH1 = 'Tour of finances';
+const expectedH1 = 'Onepay front-end testing';
 const expectedTitle = `${expectedH1}`;
 const expectedH2 = 'My finances';
 const targetHero = { id: 16, name: 'RubberMan' };

@@ -1,0 +1,89 @@
+<mat-card>
+	<form #f="ngForm" (ngSubmit)="onSubmit(f)" class="filter-form">
+		<div class="form-field">
+			<!-- Merchant ID -->
+			<mat-form-field class="filter-full-width">
+				<input matInput placeholder="Merchant ID" name="merchant_id" [(ngModel)]="criteria.merchant_id" class="merchant_id">
+			</mat-form-field>
+			<!-- From Date -->
+			<mat-form-field>
+				<input matInput [matDatepicker]="from_date" name="from_date" [(ngModel)]="criteria.from_date" placeholder="From Date">
+				<mat-datepicker-toggle matSuffix [for]="from_date"></mat-datepicker-toggle>
+				<mat-datepicker #from_date></mat-datepicker>
+			</mat-form-field>
+			<!-- To Date -->
+			<mat-form-field>
+				<input matInput [matDatepicker]="to_date" name="to_date" [(ngModel)]="criteria.to_date" placeholder="To Date">
+				<mat-datepicker-toggle matSuffix [for]="to_date"></mat-datepicker-toggle>
+				<mat-datepicker #to_date></mat-datepicker>
+			</mat-form-field>
+			<!-- Transaction ID -->
+			<mat-form-field class="filter-full-width">
+				<input matInput placeholder="Transaction ID" name="tranaction_id" [(ngModel)]="criteria.tranaction_id" class="tranaction_id">
+			</mat-form-field>
+			<!-- Order Reference -->
+			<mat-form-field class="filter-full-width">
+				<input matInput placeholder="Order Reference" name="order_ref" [(ngModel)]="criteria.order_ref" class="order_ref">
+			</mat-form-field>
+			<!-- Merchant trans Ref -->
+			<mat-form-field class="filter-full-width">
+				<input matInput placeholder="Merchant trans Ref" name="trans_ref" [(ngModel)]="criteria.trans_ref" class="trans_ref">
+			</mat-form-field>
+			<!-- Card Number -->
+			<mat-form-field class="filter-full-width">
+				<input matInput placeholder="Card Number" name="card_number" [(ngModel)]="criteria.card_number" class="card_number">
+			</mat-form-field>
+			<!-- Currency -->
+			<mat-form-field class="filter-full-width">
+				<mat-select placeholder="Currency" name="currency" [(ngModel)]="criteria.currency" disableRipple>
+					<mat-option value="">All</mat-option>
+					<mat-option value="USD">USD</mat-option>
+					<mat-option value="VND">VND</mat-option>
+				</mat-select>
+			</mat-form-field>
+			<!-- Card Type -->
+			<mat-form-field class="filter-full-width">
+				<mat-select placeholder="Card Type" name="card_type" [(ngModel)]="criteria.card_type" disableRipple>
+					<mat-option value="">All</mat-option>
+					<mat-option value="Visa">Visa</mat-option>
+					<mat-option value="Master">Master</mat-option>
+					<mat-option value="CUP">CUP</mat-option>
+					<mat-option value="JCB">JCB</mat-option>
+					<mat-option value="Amex">Amex</mat-option>
+				</mat-select>
+			</mat-form-field>
+			<!-- Transaction Type -->
+			<mat-form-field class="filter-full-width">
+				<mat-select placeholder="Transaction Type" name="trans_type" [(ngModel)]="criteria.trans_type" disableRipple>
+					<mat-option value="">All</mat-option>
+					<mat-option value="Purchase">Purchase</mat-option>
+					<mat-option value="Refund">Refund</mat-option>
+				</mat-select>
+			</mat-form-field>
+			<!-- Transaction State -->
+			<mat-form-field class="filter-full-width">
+				<mat-select placeholder="Transaction State" name="transaction_state" [(ngModel)]="criteria.transaction_state" disableRipple>
+					<mat-option value="">All</mat-option>
+					<mat-option value="0">Successful</mat-option>
+					<mat-option value="1">Failed</mat-option>
+				</mat-select>
+			</mat-form-field>
+
+			<mat-form-field class="filter-full-width">
+				<mat-select placeholder="Display Number" name="display_number" [(ngModel)]="criteria.display_number" disableRipple>
+					<mat-option value="100">100</mat-option>
+					<mat-option value="50">50</mat-option>
+					<mat-option value="25">25</mat-option>
+				</mat-select>
+			</mat-form-field>
+		</div>
+
+		<div class="handle-button">
+			<button mat-raised-button color="primary" class="search" type="submit">Search</button>
+
+			<button mat-raised-button color="primary" (click)="clearValue()" class="clear">Clear</button>
+		</div>
+
+	</form>
+</mat-card>
+<!-- <app-filters (messageEvent)="receiveMessage($event)"></app-filters> -->

@@ -1,31 +1,46 @@
 header {
 	width: 100%;
-	height: auto;
+	height: 60px;
 	float: left;
+	line-height: normal;
+	background: #fff;
 }
-header h3 {
-	float: left;
-}
-header button {
-	float: right;
-	margin-top: 15px;
-}
+
 .container {
-	max-width: 1300px;
+	max-width: 94%;
 	margin: 0 auto;
 }
-.onepay-testing {
+
+header nav {
+	box-shadow: 1px 1px 1px 1px #d2d2d2;
+	float: left;
+	height: 100%;
 	width: 100%;
-	height: auto;
 }
-.app-filters {
-	width: 18%;
-	float: left;
-	margin-right: 1%;
-	height: 100%;
-}
-.app-finances {
-	width: 81%;
+
+header nav a {
+	background-color: initial;
+	color: #000;
+	margin: 0;
 	float: left;
 	height: 100%;
+	padding: 0 10px;
+}
+header nav a:hover {
+	background: #0089d0;
+	color: #fff;
+}
+header nav a img {
+	padding: 5px 0;
+	height: 80%;
+}
+header nav a span {
+	position: relative;
+	top: 40%;
+	transform: translateY(-50%);
+}
+
+header nav .active {
+	background: #0089d0;
+	color: #fff;
 }

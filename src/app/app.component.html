@@ -1,11 +1,23 @@
 <header>
-	<div class="container">
-		<h3>{{title}}</h3>
-		<button mat-raised-button color="primary">Download</button>
-	</div>
+	<nav>
+		<a routerLink="/"><img src="../assets/images/logo.png"></a>
+		<a routerLink="/international-card" routerLinkActive="active"
+		   [routerLinkActiveOptions]="{exact: true}">
+			<span>International Card</span>
+		</a>
+		<a routerLink="/domestic" routerLinkActive="active"
+		   [routerLinkActiveOptions]="{exact: true}">
+			<span>Domestic</span>
+		</a>
+		<a routerLink="/admin" routerLinkActive="active"
+		   [routerLinkActiveOptions]="{exact: true}">
+			<span>Admin</span>
+		</a>
+		<a routerLink="/file-management" routerLinkActive="active"
+		   [routerLinkActiveOptions]="{exact: true}">
+			<span>File Management</span>
+		</a>
+	</nav>
 </header>
-<div class="onepay-testing container">
-	<app-filters class="app-filters"></app-filters>
-	<app-finances class="app-finances" (messageEvent)="receiveMessage($event)"></app-finances>
-</div>
 
+<router-outlet></router-outlet>

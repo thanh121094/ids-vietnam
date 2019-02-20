@@ -1,0 +1,120 @@
+table {
+  width: 80%;
+}
+
+.mat-table {
+	overflow-y: auto;
+	height: 91%;
+	width: 100%;
+}
+.mat-header-row {
+	position: sticky;
+	top: 0;
+}
+.mat-header-cell {
+	font-weight: bold;
+	font-size: 14px;
+}
+.mat-paginator {
+	border-top: 1px solid #d3d3d3;
+	height: 50px;
+}
+.mat-elevation-z8 {
+	height: 100%;
+	box-shadow: inherit;
+}
+mat-cell:first-of-type, mat-footer-cell:first-of-type, mat-header-cell:first-of-type {
+	flex: 0 0 30px;
+	padding-left: 10px;
+}
+.mat-cell:nth-child(2), .mat-header-cell:nth-child(2) {
+	flex: 0 0 120px;
+}
+.mat-cell:nth-child(3), .mat-header-cell:nth-child(3) {
+	flex: 0 0 80px;
+}
+.mat-cell:nth-child(4), .mat-header-cell:nth-child(4) {
+	flex: 0 0 80px;
+}
+.mat-cell:nth-child(5), .mat-header-cell:nth-child(5) {
+	flex: 0 0 100px;
+}
+.mat-cell:nth-child(6), .mat-header-cell:nth-child(6) {
+	flex: 0 0 110px;
+}
+.mat-cell:nth-child(7), .mat-header-cell:nth-child(7) {
+	flex: 0 0 110px;
+}
+.mat-cell:nth-child(8), .mat-header-cell:nth-child(8) {
+	flex: 0 0 140px;
+}
+.mat-cell:nth-child(10), .mat-header-cell:nth-child(10) {
+	flex: 0 0 70px;
+}
+mat-header-row {
+	background: #d3d3d3;
+}
+mat-row:nth-child(odd) {
+	background: #d4f4f5;
+}
+mat-row:hover {
+	background: #85f3f9;
+}
+/*@media screen and (max-width: 1366px) {*/
+  /*.mat-table {*/
+    /*border: 0;*/
+    /*vertical-align: middle;*/
+  /*}*/
+
+  /*.mat-table caption {*/
+    /*font-size: 1em;*/
+  /*}*/
+  /**/
+  /*!*  Enable this to hide header*/
+  /*.mat-table .mat-header-cell {*/
+    /**/
+    /*border: 10px solid;*/
+    /*clip: rect(0 0 0 0);*/
+    /*height: 1px;*/
+    /*margin: -1px;*/
+    /*padding: 0;*/
+    /*position: absolute;*/
+    /*width: 1px;*/
+  /*}*/
+  /**!*/
+  /*.mat-table .mat-row {*/
+    /*border-bottom: 5px solid #ddd;*/
+    /*display: block;*/
+  /*}*/
+  /*!**/
+  /*.mat-table .mat-row:nth-child(even) {background: #CCC}*/
+  /*.mat-table .mat-row:nth-child(odd) {background: #FFF}*/
+  /**!*/
+  /*.mat-table .mat-cell {*/
+    /*border-bottom: 1px solid #ddd;*/
+    /*display: block;*/
+    /*font-size: 1em;*/
+    /*text-align: right;*/
+    /*font-weight: bold;*/
+    /*height:30px;*/
+    /*margin-bottom: 4%;*/
+  /*}*/
+  /*.mat-table .mat-cell:before {*/
+    /*!**/
+    /** aria-label has no advantage, it won't be read inside a table*/
+    /*content: attr(aria-label);*/
+    /**!*/
+    /*content: attr(data-label);*/
+    /*float: left;*/
+    /*text-transform: uppercase;*/
+    /*font-weight: normal;*/
+    /**/
+    /*font-size: .85em;*/
+  /*}*/
+  /*.mat-table .mat-cell:last-child {*/
+    /*border-bottom: 0;*/
+  /*}*/
+    /*.mat-table .mat-cell:first-child {*/
+    /*margin-top: 4%;*/
+  /*}*/
+/*}*/
